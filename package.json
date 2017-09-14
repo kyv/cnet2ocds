@@ -1,0 +1,38 @@
+{
+  "name": "cnet2ocds",
+  "version": "0.0.1",
+  "description": "Convert Compranet data to OCDS",
+  "main": "index.js",
+  "@std/esm": {
+    "esm": "js"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/mocha test/*.js",
+    "precommit": "npm run lint",
+    "lint": "./node_modules/.bin/eslint '**/*.js' --fix"
+  },
+  "author": "PODER",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^7.2.3",
+    "babel-preset-env": "^1.6.0",
+    "eslint": "^4.3.0",
+    "eslint-config-eslint": "^4.0.0",
+    "eslint-plugin-chai-friendly": "^0.3.6",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-node": "^5.1.1",
+    "mocha": "^3.4.2",
+    "should": "^11.2.1"
+  },
+  "dependencies": {
+    "@std/esm": "^0.5.1",
+    "company-laundry": "git+ssh://git@github.com/kyv/lavanderia.git",
+    "lodash.assign": "^4.2.0",
+    "lodash.camelcase": "^4.3.0",
+    "lodash.isstring": "^4.0.1",
+    "lodash.mapvalues": "^4.6.0",
+    "normalize-space": "^1.0.2",
+    "slug": "^0.9.1"
+  }
+}

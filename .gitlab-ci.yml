@@ -1,0 +1,11 @@
+image: node:alpine
+
+test:
+  stage: test
+  tags:
+   - docker
+  variables:
+    NODE_ENV: 'test'
+  script:
+   - npm install --silent
+   - npm run test
