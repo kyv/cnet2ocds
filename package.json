@@ -1,6 +1,6 @@
 {
   "name": "cnet2ocds",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Convert Compranet data to OCDS",
   "main": "index.js",
   "@std/esm": {

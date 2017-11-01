@@ -26,7 +26,8 @@ Convert from COMPRANET to OCDS
     const release = OCDS.release;
     const package = OCDS.package;
     const isValid = OCDS.isValid;
+    const isValid = OCDS.isValidPackage;
 
 ## Example OCDS Document
 
-El siguiente *release* fue derivado de esta [documento de COMPRANET](./test/cnetDocument.json). That gets converted to an [OCDS release](./test/release.json). The [OCDS schema specification](http://standard.open-contracting.org/latest/en/schema) may be of interest.
+El siguiente *release* fue derivado de esta [documento de COMPRANET](./test/cnetDocument.json). That gets converted to an [OCDS release](./test/release.json). There is also an example [OCDS release package](./test/releasePackage.json). The [OCDS schema specification](http://standard.open-contracting.org/latest/en/schema) may be of interest.

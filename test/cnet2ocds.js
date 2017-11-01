@@ -12,20 +12,27 @@ describe('Transform compranet document to OCDS Release', () => {
   });
 
   it('Should have a release w/ ocid and an id', () => {
-    const release = new Release({cnetDocument}).getRelease;
+    const release = new Release({cnetDocument}).release;
     should(release.ocid).eql('ocds-0ud2q6-LA-019GYN059-T11-2012');
     should(release.id).eql('LA-019GYN059-T11-2012');
   });
 
   it('Release 0 should have array of parties', () => {
-    const release = new Release({cnetDocument}).getRelease;
+    const release = new Release({cnetDocument}).release;
     const party = release.parties[0];
     should(party.id).eql('issste-departamento-de-adquisicion-de-instrumental-medico-019gyn059');
   });
 
-  it('Should validate against OCDS release schema', () => {
+  it('Should validate release against OCDS schema', () => {
     const r = new Release({cnetDocument});
     const isValid = r.isValid;
     should(isValid).eql(true);
   });
+
+  it('Should validate package against OCDS schema', () => {
+    const r = new Release({cnetDocument});
+    const isValid = r.isValidPackage;
+    should(isValid).eql(true);
+  });
+
 });
