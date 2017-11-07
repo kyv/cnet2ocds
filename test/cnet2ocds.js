@@ -12,8 +12,8 @@ describe('Transform compranet document to OCDS Release', () => {
   });
 
   it('Should have a release w/ ocid and an id', () => {
-    const release = new Release({cnetDocument}).release;
-    should(release.ocid).eql('ocds-0ud2q6-LA-019GYN059-T11-2012');
+    const release = new Release({cnetDocument: federalDocument}).release;
+    should(release.ocid).eql('OCDS-0UD2Q6-LA-019GYN059-T11-2012');
     should(release.id).eql('LA-019GYN059-T11-2012');
   });
 
