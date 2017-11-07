@@ -3,13 +3,14 @@
   "version": "0.1.0",
   "description": "Convert Compranet data to OCDS",
   "main": "index.js",
+  "preferGlobal": "true",
   "@std/esm": {
     "esm": "js"
   },
   "scripts": {
-    "test": "./node_modules/.bin/mocha test/*.js",
+    "test": "npx mocha test/*.js",
     "precommit": "npm run lint",
-    "lint": "./node_modules/.bin/eslint '**/*.js' --fix"
+    "lint": "npx eslint '**/*.js'"
   },
   "author": "PODER",
   "license": "ISC",
