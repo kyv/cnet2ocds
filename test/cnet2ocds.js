@@ -1,8 +1,12 @@
 /* eslint-env mocha */
 require('@std/esm');
 const should = require('should');
-const cnetDocument = require('./cnetDocument.json');
+const federalDocument = require('./data/cnetAPFDocument.json');
+const stateDocument = require('./data/cnetGEDocument.json');
+const cityDocument = require('./data/cnetGMDocument.json');
 const Release = require('../lib/ocds').default;
+
+const cnetDocument = cityDocument;
 
 describe('Transform compranet document to OCDS Release', () => {
 
@@ -18,9 +22,9 @@ describe('Transform compranet document to OCDS Release', () => {
   });
 
   it('Release 0 should have array of parties', () => {
-    const release = new Release({cnetDocument}).release;
+    const release = new Release({cnetDocument: federalDocument}).release;
     const party = release.parties[0];
-    should(party.id).eql('issste-departamento-de-adquisicion-de-instrumental-medico-019gyn059');
+    should(party.id).eql('instituto-de-seguridad-y-servicios-sociales-de-los-trabajadores-del-estado');
   });
 
   it('Should validate release against OCDS schema', () => {

@@ -1,0 +1,85 @@
+{
+	"ocid": "OCDS-0UD2Q6-LA-019GYN059-T11-2012",
+	"id": "LA-019GYN059-T11-2012",
+	"date": "2017-12-12T02:02:48.418Z",
+	"initiationType": "tender",
+	"source": [
+		"https://compranet.funcionpublica.gob.mx/esop/guest/go/opportunity/detail?opportunityId=210211"
+	],
+	"tag": [
+		"tender"
+	],
+	"parties": [
+		{
+			"name": "Instituto de Seguridad y Servicios Sociales de los Trabajadores del Estado",
+			"id": "instituto-de-seguridad-y-servicios-sociales-de-los-trabajadores-del-estado",
+			"roles": [
+				"buyer"
+			],
+			"contactPoint": {
+				"name": "Josimar Carlos González Betanzos"
+			},
+			"department": {
+				"name": "Departamento de Adquisición de Instrumental Médico",
+				"id": "019GYN059"
+			}
+		},
+		{
+			"name": "CORPORATIVO GIORMAR de MEXICO",
+			"id": "corporativo-giormar-de-mexico",
+			"roles": [
+				"supplier"
+			],
+			"details": {
+				"compranetStatus": "HABILITADO"
+			}
+		}
+	],
+	"planning": {
+		"budget": {}
+	},
+	"tender": {
+		"id": 1,
+		"procurementMethod": "open",
+		"procurementMethodRationale": "Internacional",
+		"procurementMethodDetails": "Adquisiciones",
+		"submissionMethod": [
+			"Mixta"
+		]
+	},
+	"awards": [
+		{
+			"title": "CONTRATO 0010 IM/2013",
+			"suppliers": [
+				{
+					"name": "CORPORATIVO GIORMAR de MEXICO",
+					"id": "corporativo-giormar-de-mexico"
+				}
+			],
+			"date": "2013-02-13T00:00:00.000Z",
+			"id": 1,
+			"value": {
+				"amount": 2290976.8,
+				"currency": "MXN"
+			}
+		}
+	],
+	"contracts": [
+		{
+			"title": "CONTRATO 0010 IM/2013",
+			"ocid": "OCDS-0UD2Q6-LA-019GYN059-T11-2012",
+			"suppliers": "CORPORATIVO GIORMAR de MEXICO",
+			"id": 327530,
+			"awardID": 1,
+			"period": {
+				"startDate": "2013-02-20T00:00:00.000Z",
+				"endDate": "2013-12-31T00:00:00.000Z"
+			},
+			"value": {
+				"amount": 2290976.8,
+				"currency": "MXN"
+			},
+			"date_signed": "2013-02-20T00:00:00.000Z"
+		}
+	]
+}
