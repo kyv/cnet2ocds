@@ -1,6 +1,6 @@
 {
   "name": "cnet2ocds",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Convert Compranet data to OCDS",
   "main": "index.js",
   "preferGlobal": "true",
