@@ -17,6 +17,13 @@ describe('Transform compranet document to OCDS Release', () => {
   });
 
   it('Should have a release w/ ocid and an id', () => {
+  it('Release Package metadata should gracefully ignore missing metadata', () => {
+    const ocdsPackage = new Release({
+      cnetDocument: cityDocument.body,
+    }).package;
+    should(ocdsPackage.publisher.name).eql('PODER');
+  });
+
     const release = new Release({
       cnetDocument: federalDocument.body,
       metadata: federalDocument,
