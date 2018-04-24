@@ -33,6 +33,13 @@ describe('Transform compranet document to OCDS Release', () => {
   });
 
   it('Release 0 should have array of parties', () => {
+  it('Release should have an tag', () => {
+    const release = new Release({
+      cnetDocument: federalDocument.body,
+    }).release;
+    should(release.tag[0]).eql('contractTermination');
+  });
+
     const release = new Release({
       cnetDocument: federalDocument.body,
       metadata: federalDocument,
