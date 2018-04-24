@@ -7,6 +7,10 @@
   "@std/esm": {
     "esm": "js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/kyv/cnet2ocds.git"
+  },
   "scripts": {
     "test": "npx mocha test/*.js",
     "precommit": "npm run lint",
