@@ -1,7 +1,8 @@
 /* eslint-env mocha */
 require('@std/esm');
+require = require("esm")(module/*, options*/)
 const should = require('should');
-const cnetUCRutine = require('../lib/ocdsData').cnetUCRutine;
+const buyerPartyObject = require('../lib/ocdsData').buyerPartyObject;
 const dateToISOString = require('../lib/ocdsData').dateToISOString;
 const stripSiglasFromUC = require('../lib/ocdsData').stripSiglasFromUC;
 const obtainClaveFromUC = require('../lib/ocdsData').obtainClaveFromUC;
@@ -50,56 +51,76 @@ describe('Parse specific values', () => {
     should(dateS).eql('2013-06-27T00:00:00.000Z');
   });
 
-  it('UC name parser should return `name`, and `clave_uc` when APF', () => {
+  it('buyerPartyObject should conform to expectations when APF', () => {
     const options = {
       GOBIERNO: 'APF',
       SIGLAS: 'ISSSTE',
       DEPENDENCIA: 'Instituto de Seguridad y Servicios Sociales de los Trabajadores del Estado',
       CLAVEUC: '019GYN059',
       NOMBRE_DE_LA_UC: 'ISSSTE-Departamento de Adquisición de Instrumental Médico #019GYN059',
+      RESPONSABLE: 'NAYELI ANEL PUERTO GONGORA',
     }
-    const { UCString, claveUC, siglas, dependency, govLevel } = cnetUCRutine(options);
-    should(claveUC).eql('019GYN059');
-    should(UCString).eql('Departamento de Adquisición de Instrumental Médico');
-    should(siglas).eql('ISSSTE');
-    should(dependency).eql('Instituto de Seguridad y Servicios Sociales de los Trabajadores del Estado');
-    should(govLevel).eql('Federal');
+    const expected = {
+      role: 'buyer',
+      address: { countryName: 'Mexico' },
+      parent: 'Instituto de Seguridad y Servicios Sociales de los Trabajadores del Estado',
+      id: '019GYN059',
+      name: 'Departamento de Adquisición de Instrumental Médico',
+      govLevel: 'country',
+      contactPoint: 'NAYELI ANEL PUERTO GONGORA',
+    }
+    const party = buyerPartyObject(options);
+    should(party).deepEqual(expected);
   });
 
-  it('UC name parser should return `name`, and `clave_uc` when initials are `organization-city`', () => {
+  it('buyerPartyObject should conform to expectations when GE', () => {
     const options = {
+      SIGLAS : 'SLP',
+      DEPENDENCIA : '_Gobierno del Estado de San Luis Potosí',
+      CLAVEUC : '924037999',
+      NOMBRE_DE_LA_UC : 'SLP-Instituto Estatal de Infraestructura Física Educativa-DIRECCION DE COSTOS #924037999',
+      RESPONSABLE : 'GEORGINA SILVA BARRAGAN',
       GOBIERNO: 'GE',
-      SIGLAS: 'API-Salina Cruz',
-      NOMBRE_DE_LA_UC: 'API-Salina Cruz-Gerencia de Operaciones e Ingeniería #009J3G999',
-      DEPENDENCIA: 'Administración Portuaria Integral de Salina Cruz, S.A. de C.V.',
-      CLAVEUC: '009J3G999',
     }
-    const { UCString, claveUC, siglas, dependency, govLevel, city } = cnetUCRutine(options);
-    should(claveUC).eql('009J3G999');
-    should(UCString).eql('Gerencia de Operaciones e Ingeniería');
-    should(siglas).eql('API');
-    should(city).eql('Salina Cruz');
-    should(dependency).eql('Administración Portuaria Integral de Salina Cruz, S.A. de C.V.');
-    should(govLevel).eql('State');
+    const expected = {
+      id: '924037999',
+      name: 'DIRECCION DE COSTOS',
+      parent: 'Instituto Estatal de Infraestructura Física Educativa',
+      role: 'buyer',
+      address: {
+        countryName: 'Mexico',
+        region: 'San Luis Potosí',
+      },
+      govLevel: 'region',
+    }
+
+    const party = buyerPartyObject(options);
+    should(party).deepEqual(expected);
   });
 
-  it('UC name parser should return `name`, and `clave_uc` when `DEPENDENCY` is a state', () => {
+  it('buyerPartyObject should conform to expectations when GM', () => {
     const options = {
       GOBIERNO: 'GM',
-      SIGLAS: 'MEX',
-      // EXCEPTION:  NOMBRE_DE_LA_UC: 'MEX-La Paz-DIRECCION GENERAL DE ADMINISTRACION Y FINANZAS #815070973',
-      NOMBRE_DE_LA_UC: 'MEX-Tecnológico de Estudios Superiores de Cuautitlán Izcalli-RECURSOS MATERIALES Y SERVICIOS GENERALES #915084914',
-      DEPENDENCIA: '_Gobierno Municipal del Estado de México',
-      CLAVEUC: '815070973',
+      SIGLAS : 'VER',
+      DEPENDENCIA : '_Gobierno Municipal del Estado de Veracruz de Ignacio de la Llave',
+      CLAVEUC : '830028997',
+      NOMBRE_DE_LA_UC : 'VER-Boca del Río-Municipio de Boca del Río #830028997',
+      RESPONSABLE : 'Miguel Ángel Yunes Márquez',
     }
-    const { UCString, claveUC, siglas, dependency, govLevel, state } = cnetUCRutine(options);
-    should(claveUC).eql('915084914');
-    should(UCString).eql('RECURSOS MATERIALES Y SERVICIOS GENERALES');
-    should(siglas).eql('MEX');
-    // should(city).eql('La Paz');
-    should(state).eql('México');
-    should(govLevel).eql('City');
-    should(dependency).eql('Tecnológico de Estudios Superiores de Cuautitlán Izcalli');
+    const expected = {
+      role: 'buyer',
+      id: '830028997',
+      name: 'Municipio de Boca del Río',
+      govLevel: 'city',
+      address:
+       { countryName: 'Mexico',
+         region: 'Veracruz de Ignacio de la Llave',
+         locality: 'Boca del Río',
+       },
+    }
+
+    const party = buyerPartyObject(options);
+    should(party).deepEqual(expected);
   });
 
 });
