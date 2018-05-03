@@ -5,62 +5,75 @@ const federalDocument = require('./data/cnetAPFDocument.json');
 const stateDocument = require('./data/cnetGEDocument.json');
 const cityDocument = require('./data/cnetGMDocument.json');
 const Release = require('../lib/ocds').default;
+const omit = require('lodash.omit');
 
 describe('Transform compranet document to OCDS Release', () => {
 
-  it('Release Package metadata should include publisher name', () => {
+  it('Package should include publisher name', () => {
+    const metadata = omit(cityDocument, 'body');
     const ocdsPackage = new Release({
       cnetDocument: cityDocument.body,
-      metadata: cityDocument,
+      metadata,
     }).package;
     should(ocdsPackage.publisher.name).eql('PODER');
   });
 
-  it('Should have a release w/ ocid and an id', () => {
-  it('Release Package metadata should gracefully ignore missing metadata', () => {
+  it('Package should gracefully ignore missing metadata', () => {
     const ocdsPackage = new Release({
       cnetDocument: cityDocument.body,
     }).package;
     should(ocdsPackage.publisher.name).eql('PODER');
   });
 
+  it('should have an ocid and an id', () => {
+    const metadata = omit(federalDocument, 'body');
     const release = new Release({
       cnetDocument: federalDocument.body,
-      metadata: federalDocument,
+      metadata,
     }).release;
     should(release.ocid).eql('OCDS-0UD2Q6-AA-018TOQ765-N29-2012');
     should(release.id).eql('AA-018TOQ765-N29-2012');
   });
 
-  it('Release 0 should have array of parties', () => {
-  it('Release should have an tag', () => {
+  it('should have a tag', () => {
     const release = new Release({
       cnetDocument: federalDocument.body,
     }).release;
     should(release.tag[0]).eql('contractTermination');
   });
 
+  it('should have a buyer', () => {
     const release = new Release({
       cnetDocument: federalDocument.body,
-      metadata: federalDocument,
     }).release;
-    const party = release.parties[0];
-    should(party.id).eql('comision-federal-de-electricidad');
+    should(release.buyer.name).eql('ZONA CAMPECHE');
   });
 
-  it('Should validate release against OCDS schema', () => {
+  it('should have array of parties', () => {
+    const metadata = omit(federalDocument, 'body');
+    const release = new Release({
+      cnetDocument: federalDocument.body,
+      metadata,
+    }).release;
+    const party = release.parties[0];
+    should(party.id).eql('018TOQ765');
+  });
+
+  it('Should validate against OCDS schema', () => {
+    const metadata = omit(cityDocument, 'body');
     const r = new Release({
       cnetDocument: cityDocument.body,
-      metadata: cityDocument,
+      metadata,
     });
     const isValid = r.isValid;
     should(isValid).eql(true);
   });
 
   it('Should validate package against OCDS schema', () => {
+    const metadata = omit(cityDocument, 'body');
     const r = new Release({
       cnetDocument: cityDocument.body,
-      metadata: cityDocument,
+      metadata,
     });
     const isValid = r.isValidPackage;
     should(isValid).eql(true);
