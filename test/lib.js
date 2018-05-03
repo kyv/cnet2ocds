@@ -1,5 +1,4 @@
 /* eslint-env mocha */
-require('@std/esm');
 require = require("esm")(module/*, options*/)
 const should = require('should');
 const buyerPartyObject = require('../lib/ocdsData').buyerPartyObject;

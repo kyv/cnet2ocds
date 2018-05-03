@@ -4,9 +4,6 @@
   "description": "Convert Compranet data to OCDS",
   "main": "index.js",
   "preferGlobal": "true",
-  "@std/esm": {
-    "esm": "js"
-  },
   "repository": {
     "type": "git",
     "url": "git://github.com/kyv/cnet2ocds.git"
@@ -31,8 +28,8 @@
     "should": "^11.2.1"
   },
   "dependencies": {
-    "@std/esm": "^0.5.1",
     "company-laundry": "git+https://git@github.com/kyv/lavanderia.git",
+    "esm": "^3.0.28",
     "lodash.camelcase": "^4.3.0",
     "lodash.isnull": "^3.0.0",
     "lodash.isstring": "^4.0.1",
