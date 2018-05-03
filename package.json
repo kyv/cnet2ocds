@@ -33,7 +33,6 @@
   "dependencies": {
     "@std/esm": "^0.5.1",
     "company-laundry": "git+https://git@github.com/kyv/lavanderia.git",
-    "lodash.assign": "^4.2.0",
     "lodash.camelcase": "^4.3.0",
     "lodash.isnull": "^3.0.0",
     "lodash.isstring": "^4.0.1",
