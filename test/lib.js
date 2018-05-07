@@ -127,7 +127,6 @@ describe('Parse specific values', () => {
     const options = {
       FOLIO_RUPC: 1234,
       PROVEEDOR_CONTRATISTA: 'JORGE ARTURO MATUS OLVERA',
-      ESTRATIFICACION_MPC: 'Mediana',
       SIGLAS_PAIS: 'MX',
     }
     const expected = {
@@ -139,7 +138,6 @@ describe('Parse specific values', () => {
         scheme: 'RUPC',
         legalName: 'JORGE ARTURO MATUS OLVERA',
       },
-      scale: 'Mediana',
       address: {
         countryName: 'MX',
       },
