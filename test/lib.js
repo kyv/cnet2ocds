@@ -2,6 +2,7 @@
 require = require("esm")(module/*, options*/)
 const should = require('should');
 const buyerPartyObject = require('../lib/ocdsData').buyerPartyObject;
+const supplierPartyObject = require('../lib/ocdsData').supplierPartyObject;
 const dateToISOString = require('../lib/ocdsData').dateToISOString;
 const stripSiglasFromUC = require('../lib/ocdsData').stripSiglasFromUC;
 const obtainClaveFromUC = require('../lib/ocdsData').obtainClaveFromUC;
@@ -119,6 +120,32 @@ describe('Parse specific values', () => {
     }
 
     const party = buyerPartyObject(options);
+    should(party).deepEqual(expected);
+  });
+
+  it('supplierPartyObject should conform to expectations', () => {
+    const options = {
+      FOLIO_RUPC: 1234,
+      PROVEEDOR_CONTRATISTA: 'JORGE ARTURO MATUS OLVERA',
+      ESTRATIFICACION_MPC: 'Mediana',
+      SIGLAS_PAIS: 'MX',
+    }
+    const expected = {
+      name: 'JORGE ARTURO MATUS OLVERA',
+      id: 1234,
+      roles: [ 'supplier' ],
+      identifier: {
+        id: 1234,
+        scheme: 'RUPC',
+        legalName: 'JORGE ARTURO MATUS OLVERA',
+      },
+      scale: 'Mediana',
+      address: {
+        countryName: 'MX',
+      },
+    }
+
+    const party = supplierPartyObject(options);
     should(party).deepEqual(expected);
   });
 
