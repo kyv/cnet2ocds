@@ -58,6 +58,7 @@ describe('Parse specific values', () => {
       DEPENDENCIA: 'Instituto de Seguridad y Servicios Sociales de los Trabajadores del Estado',
       CLAVEUC: '019GYN059',
       NOMBRE_DE_LA_UC: 'ISSSTE-Departamento de Adquisición de Instrumental Médico #019GYN059',
+      ESTRATIFICACION_MPC: 'Mediana',
       RESPONSABLE: 'NAYELI ANEL PUERTO GONGORA',
     }
     const expected = {
@@ -68,6 +69,7 @@ describe('Parse specific values', () => {
       name: 'Departamento de Adquisición de Instrumental Médico',
       govLevel: 'country',
       contactPoint: 'NAYELI ANEL PUERTO GONGORA',
+      details: { scale: 'Mediana' },
     }
     const party = buyerPartyObject(options);
     should(party).deepEqual(expected);
@@ -80,6 +82,7 @@ describe('Parse specific values', () => {
       CLAVEUC : '924037999',
       NOMBRE_DE_LA_UC : 'SLP-Instituto Estatal de Infraestructura Física Educativa-DIRECCION DE COSTOS #924037999',
       RESPONSABLE : 'GEORGINA SILVA BARRAGAN',
+      ESTRATIFICACION_MPC: 'Mediana',
       GOBIERNO: 'GE',
     }
     const expected = {
@@ -92,6 +95,7 @@ describe('Parse specific values', () => {
         region: 'San Luis Potosí',
       },
       govLevel: 'region',
+      details: { scale: 'Mediana' },
     }
 
     const party = buyerPartyObject(options);
@@ -105,6 +109,7 @@ describe('Parse specific values', () => {
       DEPENDENCIA : '_Gobierno Municipal del Estado de Veracruz de Ignacio de la Llave',
       CLAVEUC : '830028997',
       NOMBRE_DE_LA_UC : 'VER-Boca del Río-Municipio de Boca del Río #830028997',
+      ESTRATIFICACION_MPC: 'Mediana',
       RESPONSABLE : 'Miguel Ángel Yunes Márquez',
     }
     const expected = {
@@ -117,6 +122,7 @@ describe('Parse specific values', () => {
          region: 'Veracruz de Ignacio de la Llave',
          locality: 'Boca del Río',
        },
+      details: { scale: 'Mediana' },
     }
 
     const party = buyerPartyObject(options);
