@@ -70,6 +70,9 @@ describe('Parse specific values', () => {
       govLevel: 'country',
       contactPoint: 'NAYELI ANEL PUERTO GONGORA',
       details: { scale: 'Mediana' },
+      memberOf: {
+        name: 'Instituto de Seguridad y Servicios Sociales de los Trabajadores del Estado',
+      },
       identifier: {
         scheme: 'MX-CPA',
         id: '019GYN059',
@@ -110,6 +113,9 @@ describe('Parse specific values', () => {
       },
       govLevel: 'region',
       details: { scale: 'Mediana' },
+      memberOf: {
+        name: 'Gobierno del Estado de San Luis Potosí',
+      },
       identifier: {
         scheme: 'MX-CPA',
         id: '924037999',
@@ -151,6 +157,9 @@ describe('Parse specific values', () => {
          locality: 'Boca del Río',
        },
       details: { scale: 'Mediana' },
+      memberOf: {
+        name: 'Gobierno Municipal del Estado de Veracruz de Ignacio de la Llave',
+      },
       identifier: {
         scheme: 'MX-CPA',
         id: '830028997',
