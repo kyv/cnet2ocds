@@ -143,6 +143,7 @@ describe('Parse specific values', () => {
         id: 1234,
         scheme: 'RUPC',
         legalName: 'JORGE ARTURO MATUS OLVERA',
+        uri: 'https://sites.google.com/site/cnetrupc/rupc',
       },
       address: {
         countryName: 'MX',
