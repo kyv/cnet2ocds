@@ -187,6 +187,14 @@ describe('Parse specific values', () => {
         legalName: 'JORGE ARTURO MATUS OLVERA',
         uri: 'https://sites.google.com/site/cnetrupc/rupc',
       },
+      additionalIdentifiers: [
+        {
+          id: 1234,
+          scheme: 'CompranetPlus',
+          legalName: 'JORGE ARTURO MATUS OLVERA',
+          uri: null,
+        },
+      ],
       address: {
         countryName: 'MX',
       },
