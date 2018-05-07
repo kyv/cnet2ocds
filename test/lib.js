@@ -70,6 +70,20 @@ describe('Parse specific values', () => {
       govLevel: 'country',
       contactPoint: 'NAYELI ANEL PUERTO GONGORA',
       details: { scale: 'Mediana' },
+      identifier: {
+        scheme: 'MX-CPA',
+        id: '019GYN059',
+        legalName: 'Departamento de Adquisición de Instrumental Médico',
+        uri: 'https://sites.google.com/site/cnetuc/directorio',
+      },
+      additionalIdentifiers: [
+        {
+          scheme: 'CompranetPlus',
+          id: '019GYN059',
+          legalName: 'Departamento de Adquisición de Instrumental Médico',
+          uri: null,
+        },
+      ],
     }
     const party = buyerPartyObject(options);
     should(party).deepEqual(expected);
@@ -96,6 +110,20 @@ describe('Parse specific values', () => {
       },
       govLevel: 'region',
       details: { scale: 'Mediana' },
+      identifier: {
+        scheme: 'MX-CPA',
+        id: '924037999',
+        legalName: 'DIRECCION DE COSTOS',
+        uri: 'https://sites.google.com/site/cnetuc/directorio',
+      },
+      additionalIdentifiers: [
+        {
+          scheme: 'CompranetPlus',
+          id: '924037999',
+          legalName: 'DIRECCION DE COSTOS',
+          uri: null,
+        },
+      ],
     }
 
     const party = buyerPartyObject(options);
@@ -123,6 +151,20 @@ describe('Parse specific values', () => {
          locality: 'Boca del Río',
        },
       details: { scale: 'Mediana' },
+      identifier: {
+        scheme: 'MX-CPA',
+        id: '830028997',
+        legalName: 'Municipio de Boca del Río',
+        uri: 'https://sites.google.com/site/cnetuc/directorio',
+      },
+      additionalIdentifiers: [
+        {
+          scheme: 'CompranetPlus',
+          id: '830028997',
+          legalName: 'Municipio de Boca del Río',
+          uri: null,
+        },
+      ],
     }
 
     const party = buyerPartyObject(options);
