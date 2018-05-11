@@ -9,7 +9,7 @@
     "url": "git://github.com/kyv/cnet2ocds.git"
   },
   "scripts": {
-    "test": "npx mocha test/*.js",
+    "test": "npx mocha test/main.js",
     "precommit": "npm run lint",
     "lint": "npx eslint '**/*.js'"
   },
