@@ -1,10 +1,10 @@
 /* eslint-env mocha */
-const should = require('should');
-const buyerPartyObject = require('../lib/ocdsData').buyerPartyObject;
-const supplierPartyObject = require('../lib/ocdsData').supplierPartyObject;
-const dateToISOString = require('../lib/ocdsData').dateToISOString;
-const stripSiglasFromUC = require('../lib/ocdsData').stripSiglasFromUC;
-const obtainClaveFromUC = require('../lib/ocdsData').obtainClaveFromUC;
+import should from 'should';
+import { buyerPartyObject } from '../lib/ocdsData';
+import { supplierPartyObject } from '../lib/ocdsData';
+import { dateToISOString } from '../lib/ocdsData';
+import { stripSiglasFromUC } from '../lib/ocdsData';
+import { obtainClaveFromUC } from '../lib/ocdsData';
 
 describe('Parse specific values', () => {
 
