@@ -1,85 +1,139 @@
 {
-	"ocid": "OCDS-0UD2Q6-LA-019GYN059-T11-2012",
-	"id": "LA-019GYN059-T11-2012",
-	"date": "2017-12-12T02:02:48.418Z",
-	"initiationType": "tender",
-	"source": [
-		"https://compranet.funcionpublica.gob.mx/esop/guest/go/opportunity/detail?opportunityId=210211"
-	],
-	"tag": [
-		"tender"
-	],
-	"parties": [
-		{
-			"name": "Instituto de Seguridad y Servicios Sociales de los Trabajadores del Estado",
-			"id": "instituto-de-seguridad-y-servicios-sociales-de-los-trabajadores-del-estado",
-			"roles": [
-				"buyer"
-			],
-			"contactPoint": {
-				"name": "Josimar Carlos González Betanzos"
-			},
-			"department": {
-				"name": "Departamento de Adquisición de Instrumental Médico",
-				"id": "019GYN059"
-			}
-		},
-		{
-			"name": "CORPORATIVO GIORMAR de MEXICO",
-			"id": "corporativo-giormar-de-mexico",
-			"roles": [
-				"supplier"
-			],
-			"details": {
-				"compranetStatus": "HABILITADO"
-			}
-		}
-	],
-	"planning": {
-		"budget": {}
-	},
-	"tender": {
-		"id": 1,
-		"procurementMethod": "open",
-		"procurementMethodRationale": "Internacional",
-		"procurementMethodDetails": "Adquisiciones",
-		"submissionMethod": [
-			"Mixta"
-		]
-	},
-	"awards": [
-		{
-			"title": "CONTRATO 0010 IM/2013",
-			"suppliers": [
-				{
-					"name": "CORPORATIVO GIORMAR de MEXICO",
-					"id": "corporativo-giormar-de-mexico"
-				}
-			],
-			"date": "2013-02-13T00:00:00.000Z",
-			"id": 1,
-			"value": {
-				"amount": 2290976.8,
-				"currency": "MXN"
-			}
-		}
-	],
-	"contracts": [
-		{
-			"title": "CONTRATO 0010 IM/2013",
-			"ocid": "OCDS-0UD2Q6-LA-019GYN059-T11-2012",
-			"suppliers": "CORPORATIVO GIORMAR de MEXICO",
-			"id": 327530,
-			"awardID": 1,
-			"period": {
-				"startDate": "2013-02-20T00:00:00.000Z",
-				"endDate": "2013-12-31T00:00:00.000Z"
-			},
-			"value": {
-				"amount": 2290976.8,
-				"currency": "MXN"
-			},
-			"date_signed": "2013-02-20T00:00:00.000Z"
-		}
-	]
+  "ocid": "OCDS-0UD2Q6-LO-830028997-N2-2014",
+  "id": "LO-830028997-N2-2014",
+  "initiationType": "tender",
+  "source": [
+    "https://compranet.funcionpublica.gob.mx/esop/guest/go/opportunity/detail?opportunityId=496355"
+  ],
+  "tag": [
+    "contractTermination"
+  ],
+  "language": "es",
+  "parties": [
+    {
+      "role": "buyer",
+      "details": {
+        "scale": "Mediana"
+      },
+      "id": "830028997",
+      "name": "Municipio de Boca del Río",
+      "govLevel": "city",
+      "address": {
+        "countryName": "Mexico",
+        "region": "Veracruz de Ignacio de la Llave",
+        "locality": "Boca del Río"
+      },
+      "memberOf": {
+        "name": "Gobierno Municipal del Estado de Veracruz de Ignacio de la Llave"
+      },
+      "identifier": {
+        "scheme": "MX-CPA",
+        "id": "830028997",
+        "legalName": "Municipio de Boca del Río",
+        "uri": "https://sites.google.com/site/cnetuc/directorio"
+      },
+      "additionalIdentifiers": [
+        {
+          "scheme": "CompranetPlus",
+          "id": "830028997",
+          "legalName": "Municipio de Boca del Río",
+          "uri": null
+        }
+      ]
+    }
+  ],
+  "buyer": {
+    "name": "Municipio de Boca del Río",
+    "id": "830028997",
+    "consolidatedProcessMxCnet": "0"
+  },
+  "planning": {
+    "budget": {
+      "budgetBreakdown": {
+        "description": "Importe de Aportación del Gobierno Federal señalada en el oficio de autorización sin incluir el impuesto al valor agregado.",
+        "amount": {
+          "amount": 1067586.2,
+          "currency": "MXN"
+        },
+        "budgetClassifications": {
+          "origin": 1
+        }
+      },
+      "project": "20S155",
+      "projectID": "P APOYO INST MUJERES ENT FEDER"
+    }
+  },
+  "tender": {
+    "id": 735918,
+    "title": "Revitalización del Blvd Manuel Ávila Camacho (etapa 1)",
+    "status": "complete",
+    "procurementMethodMxCnet": "Licitación Pública",
+    "procurementMethodCharacterMxCnet": "Nacional",
+    "additionalProcurmentCategory": "Obra Pública",
+    "procurementMethodDetailsTemplateMxCnet": "Z15122015 16. Licitación Pública Nacional LOPSRM",
+    "awardCriteriaDetailsScaleDetailsMxCnet": [
+      "Mediana"
+    ],
+    "contractPeriod": {
+      "multiyearContractMxCnet": 1
+    },
+    "submissionMethod": [
+      "Presencial"
+    ],
+    "procurementMethod": "open",
+    "mainProcurmentCategory": "works",
+    "awardCriteriaDetailsScale": [
+      "sme"
+    ],
+    "tenderPeriod": {
+      "startDate": "2014-12-16T10:31:00.000Z",
+      "endDate": "2014-12-26T11:00:00.000Z"
+    }
+  },
+  "awards": [
+    {
+      "title": "CONTRATO DE OBRA PUBLICA MBR-2014-RM-0514",
+      "suppliers": [
+        {
+          "name": "JORGE ARTURO MATUS OLVERA",
+          "id": "jorge-arturo-matus-olvera"
+        }
+      ],
+      "status": null,
+      "id": 0,
+      "value": {
+        "amount": 23266093.9,
+        "currency": "MXN"
+      }
+    }
+  ],
+  "contracts": [
+    {
+      "status": "terminated",
+      "statusMxCnet": "Expirado",
+      "title": "CONTRATO DE OBRA PUBLICA MBR-2014-RM-0514",
+      "ocid": "OCDS-0UD2Q6-LO-830028997-N2-2014",
+      "suppliers": "JORGE ARTURO MATUS OLVERA",
+      "id": 672651,
+      "awardID": 0,
+      "period": {
+        "startDate": "2015-01-01T00:00:00.000Z",
+        "endDate": "2015-06-29T00:00:00.000Z",
+        "multiyearContractMxCnet": 1
+      },
+      "value": {
+        "amount": 23266093.9,
+        "currency": "MXN"
+      },
+      "valueWithTax": {
+        "amount": 23266093.9,
+        "currency": "MXN"
+      },
+      "dateSigned": "2014-12-30T00:00:00.000Z",
+      "hasFramework": "0",
+      "framework": null,
+      "filedMxCnet": "No"
+    }
+  ],
+  "date": "2018-01-02T13:21:16.000Z"
 }
