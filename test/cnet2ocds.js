@@ -1,5 +1,4 @@
 /* eslint-env mocha */
-require = require("esm")(module/*, options*/)
 const should = require('should');
 const federalDocument = require('./data/cnetAPFDocument.json');
 const stateDocument = require('./data/cnetGEDocument.json');
