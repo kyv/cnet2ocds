@@ -28,6 +28,16 @@ Convert from COMPRANET to OCDS
     const isValid = OCDS.isValid;
     const isValid = OCDS.isValidPackage;
 
+## CLI
+
+you also get a cli:
+
+    cat test/data/cnetGMDocument.json | ./bin/app.js |jq
+
+you can also use it to transform COMPRANET streams to OCDS. Add [jq](https://stedolan.github.io/jq/) for easier reading. If you want to output packages instead of releases (the default) add the `--package` option.
+
+    curl -s https://excel2json.herokuapp.com/https://compranetinfo.funcionpublica.gob.mx/descargas/cnet/Contratos2013.zip | ./bin/app.js --package | jq
+
 ## Example OCDS Document
 
 El siguiente *release* fue derivado de esta [documento de COMPRANET](./test/data/cnetGMDocument.json). That gets converted to an [OCDS release](./test/data/release.json). There is also an example [OCDS release package](./test/data/releasePackage.json). The [OCDS schema specification](http://standard.open-contracting.org/latest/en/schema) may be of interest.
