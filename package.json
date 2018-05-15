@@ -7,6 +7,7 @@
   "bin": {
     "c2o": "bin/app.js"
   },
+  "engines" : { "node" : ">=8.11" },
   "repository": {
     "type": "git",
     "url": "git://github.com/kyv/cnet2ocds.git"
